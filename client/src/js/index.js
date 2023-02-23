@@ -1,4 +1,4 @@
-import { Workbox } from 'workbox-window';
+// import { Workbox } from 'workbox-window';
 import '../css/styles.css';
 
 // Check if service workers are supported

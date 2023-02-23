@@ -1,5 +1,5 @@
 // TODO: Install the following package:
-import { openDB } from 'idb';
+// import { openDB } from 'idb';
 
 // TODO: Complete the initDb() function below:
 const initdb = async () => {

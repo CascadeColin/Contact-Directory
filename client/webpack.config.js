@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = () => {
   return {
@@ -10,18 +11,33 @@ module.exports = () => {
     },
 
     // TODO: Add the correct output
+    // what is being output, what is its name, and what directory do i want it put in?
+    // processing modules after they are loaded
     output: {
-      
+      filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'dist'),
     },
 
     // TODO: Add the correct plugins
     plugins: [
-     
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        title: 'Webpack Plugin',
+      }),
     ],
 
     // TODO: Add the correct modules
     module: {
-
+      rules: [
+        {
+          test: /\.css$/i,
+          use: ["style-loader", 'css-loader'],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
+        },
+      ]
     }
   };
 };
